@@ -5299,11 +5299,6 @@ plist@^3.0.1:
     xmlbuilder "^9.0.7"
     xmldom "0.1.x"
 
-plug-pag-service-pdv@^0.8.9:
-  version "0.8.9"
-  resolved "https://registry.yarnpkg.com/plug-pag-service-pdv/-/plug-pag-service-pdv-0.8.9.tgz#f76e2a6a03567580d86615d0fb9b81d920f6faed"
-  integrity sha512-FVYC6fN3CRGSYc9MhLItls6wcPq6EgfAuPscjf+PgQbn0HA78/leTILdDH3/PQNwn7Dh2lwvIRT8XmU8qdhF/Q==
-
 plugin-error@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/plugin-error/-/plugin-error-0.1.2.tgz#3b9bb3335ccf00f425e07437e19276967da47ace"
@@ -5448,6 +5443,11 @@ react-is@^16.12.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-native-plug-pag-service@^0.1.17:
+  version "0.1.17"
+  resolved "https://registry.yarnpkg.com/react-native-plug-pag-service/-/react-native-plug-pag-service-0.1.17.tgz#bf13f096447301b00f36ec7141626dd99e17d3f9"
+  integrity sha512-kvl8N5wKnwK6KGHI5wO9FtJPVTV2NdGn5wvDtPqfw0ln41q+JhvfcBnqGdoCaYzOKKcBnQ8HpZ7/QEgDVZg3Rw==
 
 react-native@0.63.4:
   version "0.63.4"

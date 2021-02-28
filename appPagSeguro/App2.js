@@ -8,30 +8,36 @@
 
 import React from 'react';
 import { Text, View, StatusBar, TouchableOpacity } from 'react-native';
+import PlugPagService, { PlugPag, PlugPagPaymentData, PlugPagActivationData } from 'react-native-plug-pag-service'
+
 
 
 
 export default function App() {
 
-  function handleGetSerialNumber() {
-    
-  }
-
-  function handleGetConstants() {
-   
-  }
-
-  function handleSetAppIdendification() {
-   
-  }
-
-  function handleGetMessages() {
-    
-  }
-
 
   function handleInitializeAndActivatePinpad() {
-    
+    PlugPagService.setAppIdendification('MeuApp', '1.0.8');
+    PlugPagService.initializeAndActivatePinpad("403938").then((initResult) => {
+      if (initResult.retCode === PlugPagService.RET_OK) {
+        const paymentData = {
+          type: PlugPagService.PAYMENT_CREDITO,
+          amount: 22 * 100,
+          installmentType: PlugPagService.INSTALLMENT_TYPE_A_VISTA,
+          installments: 1,
+          userReference: 'MeuApp',
+        };
+        PlugPagService.doPayment(JSON.stringify(paymentData)).then((initResult) => {
+          console.log('31', initResult)
+        }, error => {
+          console.error('error', error.message);
+        });
+      } else {
+
+      }
+    }, error => {
+      console.error('error', error.message);
+    });
 
   }
 
