@@ -6,8 +6,8 @@
  * @flow strict-local
  */
 
-import React from 'react';
-import { Text, View, StatusBar, TouchableOpacity } from 'react-native';
+import React, {useEffect} from 'react';
+import { Text, View, StatusBar, TouchableOpacity, DeviceEventEmitter , NativeEventEmitter } from 'react-native';
 import PlugPagService from 'plug-pag-service-pdv';
 
 
@@ -41,6 +41,13 @@ export default function App() {
       });
   }
 
+  const calendarManagerEmitter = new NativeEventEmitter(PlugPagService);
+
+  const subscription = calendarManagerEmitter.addListener(
+    'eventPayments',
+    (reminder) => console.log(reminder)
+  );
+
 
   function handleInitializeAndActivatePinpad() {
     handleSetAppIdendification()
@@ -48,10 +55,10 @@ export default function App() {
       if (initResult.retCode === 0) {
         // Define os dados do pagamento
         const paymentData = {
-          amount: 1500.0, //VALOR
+          amount: 19 * 100, //VALOR
           installmentType: 1, //A VISTA OU PARCELADO
           installments: 1, //PARCELAS
-          type: 3, //TIPO DEBITO OU CREDITO OU VOUCHER
+          type: 1, //TIPO DEBITO OU CREDITO OU VOUCHER
           userReference: 'BLABLA', //REFERENCIA
           printReceipt: false //RECEBER OU NAO SMS
         };
